@@ -6,8 +6,8 @@
         <mat-form-field class="refill-field">
             <span matPrefix>+7 &nbsp;</span>
             <mat-label>Номер телефона</mat-label>
-                <input type="email" matInput [formControl]="numberFormControl" placeholder="Номер телефона" placeholder="999-999-9999">
-            <mat-error *ngIf="numberFormControl.hasError('email') && !numberFormControl.hasError('required')">
+                <input mask='(000) 000-0000' matInput [formControl]="numberFormControl" placeholder="Номер телефона" placeholder="999-999-9999">
+            <mat-error *ngIf="numberFormControl.hasError('pattern') && !numberFormControl.hasError('required')">
                 Введите номер телефона в формате +7 985 995 22 71
             </mat-error>
             <mat-error *ngIf="numberFormControl.hasError('required')">
