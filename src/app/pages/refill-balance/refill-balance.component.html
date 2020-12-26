@@ -7,7 +7,7 @@
             <span matPrefix>+7 &nbsp;</span>
             <mat-label>Номер телефона</mat-label>
                 <input mask='(000) 000-00-00' matInput [formControl]="numberFormControl" placeholder="Номер телефона" placeholder="999-999-99-99">
-            <mat-error *ngIf="numberFormControl.hasError('pattern') && !numberFormControl.hasError('required')">
+            <mat-error *ngIf="numberFormControl.value.toString().length < 10">
                 Введите номер телефона в формате +7 999 99 99
             </mat-error>
             <mat-error *ngIf="numberFormControl.hasError('required')">
@@ -17,7 +17,7 @@
 
         <mat-form-field class="refill-field">
             <mat-label>Сумма</mat-label>
-                <input type="email" matInput [formControl]="sumFormControl" placeholder="Номер телефона">
+                <input matInput [formControl]="sumFormControl" placeholder="Номер телефона">
             <mat-error *ngIf="(sumFormControl.hasError('max') || !sumFormControl.hasError('min')) && !sumFormControl.hasError('required')">
                 Введите сумму от 1 до 1000 рублей
             </mat-error>

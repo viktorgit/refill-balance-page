@@ -14,7 +14,6 @@ export class RefillBalanceComponent implements OnInit {
 
   numberFormControl = new FormControl('', [
     Validators.required,
-    Validators.pattern(/\d/),
     Validators.maxLength(10),
     Validators.minLength(10),
   ]);
