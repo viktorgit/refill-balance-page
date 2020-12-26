@@ -1,0 +1,8 @@
+<div class="operators">
+    <p class="operators-title">Выберите оператора:</p>
+    <ng-container *ngFor="let operator of operators">
+        <div class="operator-item">
+            <button routerLink="/balance/{{ operator.id }}" mat-stroked-button color="primary">{{ operator.name }}</button>
+        </div>
+    </ng-container> 
+</div>

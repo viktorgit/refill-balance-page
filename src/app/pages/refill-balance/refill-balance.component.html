@@ -1,0 +1,33 @@
+<div class="refill-form">
+    <div class="back-link">
+        <button routerLink="" mat-stroked-button>Назад</button>
+    </div>
+    <form [formGroup]="form">
+        <mat-form-field class="refill-field">
+            <span matPrefix>+7 &nbsp;</span>
+            <mat-label>Номер телефона</mat-label>
+                <input type="email" matInput [formControl]="numberFormControl" placeholder="Номер телефона" placeholder="999-999-9999">
+            <mat-error *ngIf="numberFormControl.hasError('email') && !numberFormControl.hasError('required')">
+                Введите номер телефона в формате +7 985 995 22 71
+            </mat-error>
+            <mat-error *ngIf="numberFormControl.hasError('required')">
+                Номер телефона это обязательное поле
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="refill-field">
+            <mat-label>Сумма</mat-label>
+                <input type="email" matInput [formControl]="sumFormControl" placeholder="Номер телефона">
+            <mat-error *ngIf="(sumFormControl.hasError('max') || !sumFormControl.hasError('min')) && !sumFormControl.hasError('required')">
+                Введите сумму от 1 до 1000 рублей
+            </mat-error>
+            <mat-error *ngIf="sumFormControl.hasError('required')">
+                Введите сумму
+            </mat-error>
+        </mat-form-field>
+
+        <div class="refill-field">
+            <button [disabled]="!form.valid" (click)="pay()" mat-stroked-button color="primary">Оплатить</button>
+        </div>
+    </form>
+</div>
