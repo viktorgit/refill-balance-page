@@ -6,7 +6,7 @@
         <mat-form-field class="refill-field">
             <span matPrefix>+7 &nbsp;</span>
             <mat-label>Номер телефона</mat-label>
-                <input mask='(000) 000-0000' matInput [formControl]="numberFormControl" placeholder="Номер телефона" placeholder="999-999-99-99">
+                <input mask='(000) 000-00-00' matInput [formControl]="numberFormControl" placeholder="Номер телефона" placeholder="999-999-99-99">
             <mat-error *ngIf="numberFormControl.hasError('pattern') && !numberFormControl.hasError('required')">
                 Введите номер телефона в формате +7 999 99 99
             </mat-error>
